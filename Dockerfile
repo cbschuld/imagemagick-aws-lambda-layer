@@ -34,11 +34,10 @@ RUN ls -la /build/build/
 RUN ls -la /opt/
 RUN ls -la /opt/*/
 
+RUN zip -r /build/imagemagick-layer.zip /opt/
 
-# RUN zip -r /build/imagemagick-layer.zip /build/bin /build/share
+RUN mkdir /dist && \
+ echo "cp /build/imagemagick-layer.zip /dist/imagemagick-layer.zip" > /entrypoint.sh && \
+ chmod +x /entrypoint.sh
 
-# RUN mkdir /dist && \
-#  echo "cp /build/imagemagick-layer.zip /dist/imagemagick-layer.zip" > /entrypoint.sh && \
-#  chmod +x /entrypoint.sh
-
-# ENTRYPOINT "/entrypoint.sh"
+ENTRYPOINT "/entrypoint.sh"
