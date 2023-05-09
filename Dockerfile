@@ -4,7 +4,9 @@ WORKDIR /build
 
 COPY Makefile ./
 
+RUN yum update -y
 RUN yum groupinstall -y "Development Tools"
+RUN yum install -y cmake
 
 # # Update package manager and install necessary dependencies
 # RUN yum update -y && \
