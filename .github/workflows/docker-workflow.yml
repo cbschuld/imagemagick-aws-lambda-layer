@@ -1,0 +1,42 @@
+name: Build Layer ZIP
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  #schedule:
+  #- cron: '0 0 * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Variables
+        id: vars
+        run: |
+          imagemagick_version=$(grep 'IMAGEMAGICK_VERSION' Makefile | awk -F'?=' '{print $$2}' | sed 's/^[[:space:]]*//')
+          echo "imagemagick_version=$imagemagick_version"
+          echo "imagemagick_version=$imagemagick_version" >> $GITHUB_OUTPUT
+      - name: Build
+        id: docker_build
+        uses: docker/build-push-action@v4
+        with:
+          context: .
+          file: ./Dockerfile
+          tags: imagemagick-aws-lambda-layer:dev
+      - name: Copy artifacts
+        run: docker run -v "${{ github.workspace }}/dist":/dist imagemagick-aws-lambda-layer:dev
+      - name: Create release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.vars.outputs.imagemagick_version }}
+          file: dist/imagemagick-layer.zip
+          overwrite: true
