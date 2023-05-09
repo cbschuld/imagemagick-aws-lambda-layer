@@ -29,6 +29,7 @@ RUN yum install -y cmake
 RUN make all
 
 RUN ls -la /build/
+RUN ls -la /build/build/
 
 # RUN zip -r /build/imagemagick-layer.zip /build/bin /build/share
 
