@@ -10,14 +10,14 @@ RUN yum update -y && \
 
 # Download and install CMake
 RUN curl -LO https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3.tar.gz && \
-    tar -xzvf cmake-3.21.3.tar.gz && \
-    cd cmake-3.21.3 && \
+    tar -xzvf cmake-3.26.3.tar.gz && \
+    cd cmake-3.26.3 && \
     ./bootstrap --system-curl && \
     make -j$(nproc) && \
     make install
 
 # Cleanup
-RUN rm -rf cmake-3.21.3 cmake-3.21.3.tar.gz
+RUN rm -rf cmake-3.26.3 cmake-3.26.3.tar.gz
 
 # Set PATH environment variable to include CMake
 ENV PATH="/usr/local/bin:${PATH}"
