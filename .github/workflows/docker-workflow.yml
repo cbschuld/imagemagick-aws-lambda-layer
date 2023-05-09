@@ -21,7 +21,7 @@ jobs:
       - name: Variables
         id: vars
         run: |
-          imagemagick_version=$(grep 'IMAGEMAGICK_VERSION' Makefile | awk -F'?=' '{print $$2}' | sed 's/^[[:space:]]*//')
+          imagemagick_version=$(awk -F '= ' '/^IMAGEMAGICK_VERSION/{print $2}' Makefile)
           echo "imagemagick_version=$imagemagick_version"
           echo "imagemagick_version=$imagemagick_version" >> $GITHUB_OUTPUT
       - name: Build
