@@ -8,33 +8,10 @@ RUN yum update -y
 RUN yum groupinstall -y "Development Tools"
 RUN yum install -y cmake
 
-# # Update package manager and install necessary dependencies
-# RUN yum update -y && \
-#     yum install -y gcc-c++ make openssl-devel
-
-# # Download and install CMake
-# RUN curl -LO https://github.com/Kitware/CMake/releases/download/v3.26.3/cmake-3.26.3.tar.gz && \
-#     tar -xzvf cmake-3.26.3.tar.gz && \
-#     cd cmake-3.26.3 && \
-#     ./bootstrap --system-curl && \
-#     make -j$(nproc) && \
-#     make install
-
-# # Cleanup
-# RUN rm -rf cmake-3.26.3 cmake-3.26.3.tar.gz
-
-# # Set PATH environment variable to include CMake
-# ENV PATH="/usr/local/bin:${PATH}"
-
 RUN make all
 
-RUN ls -la /build/
-RUN ls -la /build/build/
-
-RUN ls -la /opt/
-RUN ls -la /opt/*/
-
-RUN zip -r /build/imagemagick-layer.zip /opt/
+WORKDIR /opt
+RUN zip -r /build/imagemagick-layer.zip .
 
 RUN mkdir /dist && \
  echo "cp /build/imagemagick-layer.zip /dist/imagemagick-layer.zip" > /entrypoint.sh && \
