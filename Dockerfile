@@ -12,9 +12,7 @@ RUN make all
 
 WORKDIR /opt
 
-# remove several of the runtime assets for sizing issues
-# RUN zip -ry /build/imagemagick-layer.zip . -x "bin/animate" "bin/compare" "bin/conjure" "bin/composite" "bin/display" "bin/import" "bin/magick-script" "bin/montage" "bin/stream"
-# attempt a run and zip via symlinks
+# archive with symbolic links
 RUN zip -ry /build/imagemagick-layer.zip .
 
 RUN mkdir /dist && \

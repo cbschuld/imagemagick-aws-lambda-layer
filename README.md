@@ -4,7 +4,7 @@ Github Actions based process to compile ImageMagick utilities for AWS Lambda x86
 
 ## Description for AWS Serverless Application Repository
 
-Static build of ImageMagick 7.1.1-8 for Amazon Linux 2 (`x86_64`), packaged as a Lambda layer. Bundles ImageMagick including magick, convert, mogrify and identify tools (excludes: animate, compare, conjure, composite, display, import, magick-script, montage and stream). Supports webp, jpeg, gif, png, tiff and webm formats (_all included libraries current as of 2023-05-09_).
+Static build of ImageMagick 7.1.1-8 for Amazon Linux 2 (`x86_64`), packaged as a Lambda layer. Bundles ImageMagick including magick, convert, mogrify and identify tools (_note: most of the imagemagick tooling is simply symbolic linked back to magick_). Supports webp, jpeg, gif, png, tiff and webm formats (_all included libraries current as of 2023-05-09_).
 
 ## Library Versions included in the layer
 
