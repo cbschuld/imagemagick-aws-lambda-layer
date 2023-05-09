@@ -1,6 +1,6 @@
 # ImageMagick for AWS Lambda (v7.1.1-8)
 
-Github Actions based process to compile ImageMagick utilities for AWS Lambda x86_64 instances powered by Amazon Linux 2.x, for the `python3.7`, `python3.8`, `python3.9`, `nodejs12.x`, `nodejs14.x` and the `nodejs16.x` lambda runtime.
+Github Actions based process to compile ImageMagick utilities for AWS Lambda x86_64 instances powered by Amazon Linux 2.x, for the `python3.7`, `python3.8`, `python3.9`, `nodejs12.x`, `nodejs14.x`, `nodejs16.x` and the `nodejs18.x` lambda runtime.
 
 ## Description for AWS Serverless Application Repository
 
