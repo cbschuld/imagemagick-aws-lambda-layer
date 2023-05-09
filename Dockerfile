@@ -11,7 +11,9 @@ RUN yum install -y cmake
 RUN make all
 
 WORKDIR /opt
-RUN zip -r /build/imagemagick-layer.zip .
+
+# remove several of the runtime assets for sizing issues
+RUN zip -r -x "bin/animate" "bin/compare" "bin/conjure" "bin/composite" "bin/display" "bin/import" "bin/montage" "bin/stream"  /build/imagemagick-layer.zip .
 
 RUN mkdir /dist && \
  echo "cp /build/imagemagick-layer.zip /dist/imagemagick-layer.zip" > /entrypoint.sh && \
