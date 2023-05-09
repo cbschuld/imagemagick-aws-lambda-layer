@@ -43,7 +43,7 @@ Run the following commands to deploy the Github compiled result as a layer in yo
 wget https://github.com/cbschuld/imagemagick-aws-lambda-layer/releases/download/7.1.1-8/imagemagick-layer.zip
 aws lambda publish-layer-version \
     --layer-name imagemagick-v7-1-1_8 \
-    --description "ImageMagick" \
+    --description "ImageMagick v7.1.1-8" \
     --compatible-runtimes nodejs16.x nodejs18.x \
     --compatible-architectures x86_64 \
     --zip-file fileb://imagemagick-layer.zip
