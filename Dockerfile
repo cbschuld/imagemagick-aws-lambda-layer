@@ -13,7 +13,7 @@ RUN make all
 WORKDIR /opt
 
 # remove several of the runtime assets for sizing issues
-RUN zip -r -x "bin/animate" "bin/compare" "bin/conjure" "bin/composite" "bin/display" "bin/import" "bin/montage" "bin/stream"  /build/imagemagick-layer.zip .
+RUN zip -r /build/imagemagick-layer.zip . -x "bin/animate" "bin/compare" "bin/conjure" "bin/composite" "bin/display" "bin/import" "bin/montage" "bin/stream"
 
 RUN mkdir /dist && \
  echo "cp /build/imagemagick-layer.zip /dist/imagemagick-layer.zip" > /entrypoint.sh && \
