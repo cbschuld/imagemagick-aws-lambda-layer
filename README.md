@@ -1,10 +1,10 @@
-# ImageMagick for AWS Lambda (v7.1.1-8)
+# ImageMagick for AWS Lambda (v7.1.1-21)
 
 Github Actions based process to compile ImageMagick utilities for AWS Lambda x86_64 instances powered by Amazon Linux 2.x, for the `python3.7`, `python3.8`, `python3.9`, `nodejs12.x`, `nodejs14.x`, `nodejs16.x` and the `nodejs18.x` lambda runtime.
 
 ## Description for AWS Serverless Application Repository
 
-Static build of ImageMagick 7.1.1-8 for Amazon Linux 2 (`x86_64`), packaged as a Lambda layer. Bundles ImageMagick including magick, convert, mogrify and identify tools (_note: most of the imagemagick tooling is simply symbolic linked back to magick_). Supports webp, jpeg, gif, png, tiff and webm formats (_all included libraries current as of 2023-05-09_).
+Static build of ImageMagick 7.1.1-21 for Amazon Linux (from the AWS SAM team), packaged as a Lambda layer. Bundles ImageMagick including magick, convert, mogrify and identify tools (_note: most of the imagemagick tooling is simply symbolic linked back to magick_). Supports webp, jpeg, gif, png, tiff and webm formats (_all included libraries current as of 2023-05-09_).
 
 ## Library Versions included in the layer
 
@@ -40,10 +40,10 @@ These libraries are currently bundled:
 Run the following commands to deploy the Github compiled result as a layer in your AWS account.
 
 ```
-wget https://github.com/cbschuld/imagemagick-aws-lambda-layer/releases/download/7.1.1-8/imagemagick-layer.zip
+wget https://github.com/cbschuld/imagemagick-aws-lambda-layer/releases/download/7.1.1-21/imagemagick-layer.zip
 aws lambda publish-layer-version \
-    --layer-name imagemagick-v7-1-1_8 \
-    --description "ImageMagick v7.1.1-8" \
+    --layer-name imagemagick-v7-1-1_21 \
+    --description "ImageMagick v7.1.1-21" \
     --compatible-runtimes nodejs16.x nodejs18.x \
     --compatible-architectures x86_64 \
     --zip-file fileb://imagemagick-layer.zip
