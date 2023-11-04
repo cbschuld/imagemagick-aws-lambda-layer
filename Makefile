@@ -54,8 +54,13 @@ $(CACHE_DIR)/lib/libpng.a: $(LIBPNG_SOURCE)
 
 BZIP2_SOURCE=bzip2-$(BZIP2_VERSION).tar.gz
 
+# 2023-11-04 appears the repo moved from 
+# http://prdownloads.sourceforge.net/bzip2/bzip2-$(BZIP2_VERSION).tar.gz
+# to
+# https://sourceware.org/pub/bzip2/bzip2-1.0.8.tar.gz
+
 $(BZIP2_SOURCE):
-	curl -LO http://prdownloads.sourceforge.net/bzip2/bzip2-$(BZIP2_VERSION).tar.gz
+	curl -LO https://sourceware.org/pub/bzip2/bzip2-$(BZIP2_VERSION).tar.gz
 
 $(CACHE_DIR)/lib/libbz2.a: $(BZIP2_SOURCE)
 	tar xf $<
