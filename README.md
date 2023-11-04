@@ -8,13 +8,13 @@ Static build of ImageMagick 7.1.1-8 for Amazon Linux 2 (`x86_64`), packaged as a
 
 ## Library Versions included in the layer
 
-- IMAGEMAGICK_VERSION = 7.1.1-8 ([imagemagick](https://imagemagick.org/))
-- LIBPNG_VERSION = 1.6.39 ([libpng](http://www.libpng.org/pub/png/libpng.html))
+- IMAGEMAGICK_VERSION = 7.1.1-21 ([imagemagick](https://imagemagick.org/))
+- LIBPNG_VERSION = 1.6.40 ([libpng](http://www.libpng.org/pub/png/libpng.html))
 - LIBJPG_VERSION = 9e ([libjpg](http://www.ijg.org/))
 - OPENJP2_VERSION = 2.5.0 ([openjpeg](https://github.com/uclouvain/openjpeg/))
-- LIBTIFF_VERSION = 4.5.0 ([libtiff](http://www.libtiff.org/))
-- BZIP2_VERSION = 1.0.6 ([bzip2](https://sourceware.org/bzip2/))
-- LIBWEBP_VERSION = 1.3.0 ([libwebp](https://developers.google.com/speed/webp/))
+- LIBTIFF_VERSION = 4.6.0 ([libtiff](http://www.simplesystems.org/libtiff/))
+- BZIP2_VERSION = 1.0.8 ([bzip2](https://sourceware.org/bzip2/))
+- LIBWEBP_VERSION = 1.3.2 ([libwebp](https://developers.google.com/speed/webp/))
 
 ## Prerequisites
 
